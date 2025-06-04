@@ -16,6 +16,16 @@ form.addEventListener("submit", (event) =>
 {
   event.preventDefault()
   const valor = input.value
+  const hasNumberRegex = /\d+/g
+  if (hasNumberRegex.test(valor))
+  {
+    alert("O texto tem número. Por favor, digite corretamente")
+  }
+  else
+  {
+    alert("Enviado")
+  }
+  /*
   const regex = /\D+/g
   if (!regex.test(valor))
   {
@@ -25,6 +35,7 @@ form.addEventListener("submit", (event) =>
   {
     alert("Valor não aceito")
   }
+  */
   // const value = input.value.replace(regex, "")
   // console.log(value)
 })
