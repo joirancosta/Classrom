@@ -3,7 +3,8 @@
     "server": "json-server ./aula02/server.json --port=3333",
     "build_b": "babel ./aula03/compiladores00.js --out-dir ./dist",
     "dev_b": "babel ./aula03/compiladores00.js --watch --out-dir ./dist",
-    "build_wb": "webpack"
+    "build_wb": "webpack",
+    "dev_wb": "webpack serve"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
@@ -12,10 +13,12 @@
     "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.99.9",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
