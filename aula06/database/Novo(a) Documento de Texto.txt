@@ -1,0 +1,35 @@
+SELECT * FROM products
+
+SELECT COUNT(*) FROM products
+
+SELECT COUNT(name) FROM products
+
+SELECT COUNT(price) FROM products
+
+SELECT COUNT(*) FROM products WHERE price >= 600
+
+SELECT SUM(price) FROM products
+
+SELECT SUM(price) FROM products WHERE category = 'audio'
+
+SELECT AVG(price) FROM products WHERE category = 'audio'
+
+SELECT COUNT(*) AS TOTAL FROM products
+SELECT COUNT(*) AS 'TOTAL' FROM products
+-- O AS é opcional
+SELECT COUNT(*) TOTAL FROM products
+SELECT COUNT(*) 'TOTAL' FROM products]
+-- Nome composto
+SELECT COUNT(*) AS 'TOTAL DE PRODUTOS' FROM products
+SELECT COUNT(*) AS [TOTAL DE PRODUTOS] FROM products
+
+SELECT id AS code, name AS 'Nome do produto', price preco FROM products
+
+SELECT name, COUNT(*) FROM products 
+SELECT category, COUNT(*) AS total FROM products GROUP BY category ORDER BY total DESC
+
+SELECT category, COUNT(*) AS total 
+FROM products 
+WHERE price > 600
+GROUP BY category
+ORDER BY total DESC
