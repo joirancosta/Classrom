@@ -5,7 +5,7 @@ class ProductsController {
     return response.json({message: "ok"})}
 
   async create(request: Request, response: Response) {
-    return response.json({message: "ok"})}
+    return response.json({message: request.user?.role})}
 }
 
 export { ProductsController }

@@ -8,15 +8,16 @@ class SessionsController {
   async create(request: Request, response: Response) {
     const { username, password } = request.body
     const fakeUser = {
-      id: 1,
+      id: "1",
       username: "fulano",
       password: "123456",
+      role: "customer",
     }
     if (username !== fakeUser.username || password !== fakeUser.password) {
       throw new AppError("Username e/ou senha incorreta", 401)
     }
     const { secret, expiresIn } = authConfig.jwt
-    const token = sign({}, secret, {expiresIn, subject: String(fakeUser.id)})
+    const token = sign({role: fakeUser.role}, secret, {expiresIn, subject: String(fakeUser.id)})
     return response.json({token})
   }
 }
